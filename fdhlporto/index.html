@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Muhammad Fadhli Fadillah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Space Grostek', sans-serif;
+        }
+
+        h1,
+        h2,
+        h5 {
+            font-family: 'Space Grostek', monospace;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 23ch;
+            }
+        }
+
+        @keyframes blink {
+            from {
+                border-right-color: rgba(255, 255, 255, 0.75);
+            }
+
+            to {
+                border-right-color: transparent;
+            }
+        }
+
+        .typewriter h1 {
+            overflow: hidden;
+            border-right: 0.15em solid rgba(255, 255, 255, 0.75);
+            white-space: nowrap;
+            width: 0;
+            animation: typing 4s steps(30, end) forwards, blink 0.75s step-end infinite;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .about-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+        }
+
+        .plane {
+            width: 120px;
+            height: 120px;
+            left: -200px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate 20s infinite linear;
+        }
+
+        .circle {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            transform-style: preserve-3d;
+            border-radius: 50%;
+            box-shadow: 0 0 60px rgba(220, 20, 180, 0.668), inset 0 0 60px rgb(151, 17, 204);
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotateX(0) rotateY(0) rotateZ(0);
+            }
+
+            100% {
+                transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+            }
+        }
+
+        .hex-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            /* Memberikan jarak antar baris */
+        }
+
+        .hex-row {
+            display: flex;
+            gap: 15px;
+            /* Jarak antar hexagon */
+        }
+
+        .offset {
+            margin-left: 75px;
+            /* Menggeser baris agar lebih teratur */
+        }
+
+        .hexagon {
+            width: 110px;
+            height: 125px;
+            background-color: #1e293b;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .hexagon img {
+            width: 45px;
+            height: 45px;
+        }
+
+        .hexagon p {
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .hexagon:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+        }
+
+
+        .circle:nth-child(1) {
+            transform: rotateZ(72deg) rotateX(63.435deg);
+        }
+
+        .circle:nth-child(2) {
+            transform: rotateZ(144deg) rotateX(63.435deg);
+        }
+
+        .circle:nth-child(3) {
+            transform: rotateZ(216deg) rotateX(63.435deg);
+        }
+
+        .circle:nth-child(4) {
+            transform: rotateZ(288deg) rotateX(63.435deg);
+        }
+
+        .circle:nth-child(5) {
+            transform: rotateZ(360deg) rotateX(63.435deg);
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-r from-black via-gray-800 to-black text-white">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full bg-gray-900 bg-opacity-90 backdrop-blur-md shadow-lg z-50 transition-all duration-300"
+        id="navbar">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <a href="">
+                <img src="images/fdh.png" alt="Logo" class="h-10">
+            </a>
+            <ul class="hidden md:flex space-x-6" id="nav-menu">
+                <li><a class="hover:text-indigo-400 hover:underline" href="#aboutme">About</a></li>
+                <li><a class="hover:text-indigo-400 hover:underline" href="#projects">Project</a></li>
+                <li><a class="hover:text-indigo-400 hover:underline" href="#skill">Skill</a></li>
+                <li><a class="hover:text-indigo-400 hover:underline" href="#certificate">Certification</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="h-screen flex flex-col md:flex-row items-center justify-between px-12">
+        <div class="max-w-lg text-center md:text-left typewriter">
+            <h1 class="text-5xl font-bold text-indigo-400">Hi, I'm <span class="text-white">Muhammad Fadhli</span></h1>
+            <p class="text-xl mt-4">I'm a <span class="text-indigo-400">Backend Developer</span></p>
+        </div>
+        <div class="plane">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="aboutme" class="container mx-auto py-16 flex items-center justify-center">
+        <img src="images/fadhli.jpg" alt="Profile Picture" class="w-48 md:w-64 rounded-full shadow-lg mr-6">
+        <div class="about-box">
+            <h2 class="text-3xl font-bold mb-4">About Me</h2>
+            <p class="text-lg">Sebagai siswa SMKN 4 Bandung dengan program keahlian RPL (Rekayasa Perangkat Lunak), saya
+                telah mengembangkan berbagai keterampilan dalam bidang pemrograman. Pengalaman dan prestasi saya
+                meliputi pembuatan Website, berbagai perancangan project digital, serta pengembangan sistem. Saya
+                memiliki keahlian dalam merancang serta mengintegrasikan API, mengelola database, serta mengoptimalkan
+                performa aplikasi untuk memastikan efisiensi dan skalabilitas. Selain itu, saya juga menguasai beberapa
+                bahasa pemrograman yang memperkuat kemampuan teknis saya dalam dunia pengembangan perangkat lunak,
+                khususnya di bidang <strong>Backend Development</strong>.</p>
+        </div>
+    </section>
+
+
+    <section id="projects" class="container mx-auto py-16">
+        <h2 class="text-3xl text-center font-bold mb-8">My Projects</h2>
+        <div class="flex justify-center">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div
+                    class="max-w-sm bg-gray-900 shadow-lg rounded-2xl overflow-hidden transform transition duration-300 hover:scale-105">
+                    <img class="w-full h-56 object-cover" src="images/jagooit.png" alt="Project Image">
+                    <div class="p-5">
+                        <h5 class="text-2xl font-bold text-white">Project Tefa with JagooIT</h5>
+                        <p class="text-gray-400 mt-2">Kolaborasi Teaching Factory SMKN 4 Bandung dengan JagooIT dalam
+                            pengembangan website Performance Management menggunakan Laravel</p>
+                        <div class="flex justify-between items-center mt-4">
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="max-w-sm bg-gray-900 shadow-lg rounded-2xl overflow-hidden transform transition duration-300 hover:scale-105">
+                    <img class="w-full h-56 object-cover" src="images/cozyflix.png" alt="Project Image">
+                    <div class="p-5">
+                        <h5 class="text-2xl font-bold text-white">Cozyflix</h5>
+                        <p class="text-gray-400 mt-2">Mengintregasikan API IMDB untuk menampilkan Film yang sedang
+                            tayang saat ini dan Film yang yang akan datang Menggunakan Laravel</p>
+                        <div class="flex justify-between items-center mt-4">
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="max-w-sm bg-gray-900 shadow-lg rounded-2xl overflow-hidden transform transition duration-300 hover:scale-105">
+                    <img class="w-full h-56 object-cover" src="images/algebra.jpg" alt="Project Image">
+                    <div class="p-5">
+                        <h5 class="text-2xl font-bold text-white">Algebra Dungeon</h5>
+                        <p class="text-gray-400 mt-2">Project Game dengan tema edukasi menggunakan platform Roblox </p>
+                        <div class="flex justify-between items-center mt-4">
+                            <button
+                                class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg transition duration-300">
+                                View More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skill" class="container mx-auto py-16">
+        <h2 class="text-4xl text-center font-bold mb-10 text-white tracking-wide">
+            🚀 My Skills
+        </h2>
+
+        <div class="hex-grid">
+
+            <!-- Baris 1 -->
+            <div class="hex-row">
+                <div class="hexagon"><img src="images/html.png" alt="HTML">
+                    <p>HTML</p>
+                </div>
+                <div class="hexagon"><img src="images/css.png" alt="CSS">
+                    <p>CSS</p>
+                </div>
+                <div class="hexagon"><img src="images/js.png" alt="JavaScript">
+                    <p>JavaScript</p>
+                </div>
+                <div class="hexagon"><img src="images/mysql.png" alt="MySQL">
+                    <p>MySQL</p>
+                </div>
+            </div>
+
+            <!-- Baris 2 (offset) -->
+            <div class="hex-row offset">
+                <div class="hexagon"><img src="images/php.png" alt="PHP">
+                    <p>PHP</p>
+                </div>
+                <div class="hexagon"><img src="images/java.png" alt="Java">
+                    <p>Java</p>
+                </div>
+                <div class="hexagon"><img src="images/tailwind.png" alt="Tailwind">
+                    <p>Tailwind</p>
+                </div>
+                <div class="hexagon"><img src="images/bootstrap.png" alt="Bootstrap">
+                    <p>Bootstrap</p>
+                </div>
+            </div>
+
+            <!-- Baris 3 -->
+            <div class="hex-row">
+                <div class="hexagon"><img src="images/csharp.png" alt="C#">
+                    <p>C#</p>
+                </div>
+                <div class="hexagon"><img src="images/kotlin.png" alt="Kotlin">
+                    <p>Kotlin</p>
+                </div>
+                <div class="hexagon"><img src="images/Laravel.png" alt="Laravel">
+                    <p>Laravel</p>
+                </div>
+                <div class="hexagon"><img src="images/git.png" alt="Laravel">
+                    <p>GIT</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Certification Section -->
+    <section id="certificate" class="container mx-auto py-16">
+        <h2 class="text-3xl text-center font-bold mb-8">Certifications</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+
+            <!-- Certificate Card -->
+            <div class="group [perspective:1000px]">
+                <div
+                    class="relative h-72 w-full [transform-style:preserve-3d] transition-transform duration-500 group-hover:[transform:rotateY(180deg)]">
+
+                    <!-- Front Side -->
+                    <div
+                        class="absolute inset-0 bg-gray-900 shadow-lg rounded-lg flex flex-col items-center justify-center border border-indigo-500 transition duration-300 group-hover:shadow-indigo-500/50">
+                        <img class="w-60 h-40 object-cover rounded-md" src="images/data.png" alt="Certificate 1">
+                        <h5 class="text-xl font-bold text-white mt-4">Certificate 1</h5>
+                    </div>
+
+                    <!-- Back Side -->
+                    <div
+                        class="absolute inset-0 bg-gray-800 shadow-lg rounded-lg flex flex-col items-center justify-center border border-indigo-500 [transform:rotateY(180deg)] [backface-visibility:hidden] p-6">
+                        <p class="text-gray-400 text-center">Sertifikasi Digitalent Kominfo Data Analytic</p>
+                        <a href="files/Data Analytics Digitalent Kominfo - Muhammad Fadhli Fadillah.pdf" target="_blank"
+                            class="mt-4 bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg transition duration-300">
+                            View Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certificate 2 -->
+            <div class="group [perspective:1000px]">
+                <div
+                    class="relative h-72 w-full [transform-style:preserve-3d] transition-transform duration-500 group-hover:[transform:rotateY(180deg)]">
+                    <div
+                        class="absolute inset-0 bg-gray-900 shadow-lg rounded-lg flex flex-col items-center justify-center border border-indigo-500 transition duration-300 group-hover:shadow-indigo-500/50">
+                        <img class="w-60 h-40 object-cover rounded-md" src="images/junior.png" alt="Certificate 2">
+                        <h5 class="text-xl font-bold text-white mt-4">Certificate 2</h5>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gray-800 shadow-lg rounded-lg flex flex-col items-center justify-center border border-indigo-500 [transform:rotateY(180deg)] [backface-visibility:hidden] p-6">
+                        <p class="text-gray-400 text-center">Sertifikasi Junior Office Operator BNSP</p>
+                        <a href="files/SertifikatKompetensi_JuniorOfficeOperator.pdf" target="_blank"
+                            class="mt-4 bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg transition duration-300">
+                            View Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certificate 3 -->
+            <div class="group [perspective:1000px]">
+                <div
+                    class="relative h-72 w-full [transform-style:preserve-3d] transition-transform duration-500 group-hover:[transform:rotateY(180deg)]">
+                    <div
+                        class="absolute inset-0 bg-gray-900 shadow-lg rounded-lg flex flex-col items-center justify-center border border-indigo-500 transition duration-300 group-hover:shadow-indigo-500/50">
+                        <img class="w-60 h-40 object-cover rounded-md" src="images/bimtek.png" alt="Certificate 3">
+                        <h5 class="text-xl font-bold text-white mt-4">Certificate 3</h5>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gray-800 shadow-lg rounded-lg flex flex-col items-center justify-center border border-indigo-500 [transform:rotateY(180deg)] [backface-visibility:hidden] p-6">
+                        <p class="text-gray-400 text-center">Sertifikasi Bimtek Literasi Digital</p>
+                        <a href="files/Sertifikat bimtek Literasi Digital.pdf" target="_blank"
+                            class="mt-4 bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg transition duration-300">
+                            View Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-center py-6 text-white">
+        <p class="text-lg font-semibold">Muhammad Fadhli Fadillah</p>
+        <p class="text-sm mb-4">Backend Developer | Passionate in Software Development</p>
+
+        <div class="flex justify-center space-x-6 mb-4">
+            <a href="https://www.linkedin.com/in/muhammad-fadhli-fadillah-ab52862bb?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="hover:text-blue-500">
+                <i class="fi fi-brands-linkedin"></i>
+            </a>
+            <a href="https://wa.me/6281224115028" target="_blank" class="hover:text-green-500">
+                <i class="fi fi-brands-whatsapp"></i>
+            </a>
+            <a href="https://Instagram.com/fdhle.e" target="_blank" class="hover:text-pink-500">
+                <i class="fi fi-brands-instagram"></i>
+            </a>
+            <a href="mailto:muhfadhlifadillah@yahoo.com" class="hover:text-yellow-500">
+                <i class="fi fi-brands-yahoo"></i>
+            </a>
+            <a href="https://github.com/kajogg" class="hover:text-yellow-500">
+                <i class="fi fi-brands-github"></i>
+            </a>
+        </div>
+        <p class="text-sm">&copy; 2025 Muhammad Fadhli. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Script for Navbar -->
+    <script>
+        window.addEventListener("scroll", function () {
+            const navbar = document.getElementById("navbar");
+            if (window.scrollY > 50) {
+                navbar.classList.add("bg-gray-900");
+            } else {
+                navbar.classList.remove("bg-gray-900");
+            }
+        });
+
+        document.getElementById("menu-toggle").addEventListener("click", function () {
+            const navMenu = document.getElementById("nav-menu");
+            navMenu.classList.toggle("hidden");
+        });
+    </script>
+
+</body>
+
+</html>
